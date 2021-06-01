@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    使用set方法完成内部bean注入-->
+    <bean name="dept" class="com.example.Dept">
+        <property name="name" value="奥迪集团"></property>
+        <property name="em">
+            <bean name="empName" class="com.example.Emp"></bean>
+        </property>
+        <property name="em.name" value="Jack"></property>
+    </bean>
+</beans>

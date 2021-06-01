@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean name="dog" class="com.example.Dog" init-method="init" destroy-method="destroy">
+        <property name="name" value="大黄"></property>
+    </bean>
+<!--    <bean name="cat" class="com.example.Cat" init-method="init" destroy-method="destroy">-->
+<!--        <property name="name" value="大菊为重"></property>-->
+<!--    </bean>-->
+<!--    单独的一个类  实现了BeanPostProcessor接口 然后其他bean在init时，都会执行到这个类的两个方法-->
+<!--    需要注意的是，自身并不会执行到这两个方法-->
+<!--    可以定义BeanPostProcessor多个实现，那个先定义那个先执行到-->
+    <bean name="postProcessor" class="com.example.PostProcessor"></bean>
+<!--    <bean name="postProcessor2" class="com.example.PostProcessor2"></bean>-->
+</beans>

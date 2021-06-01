@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop  http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean name="userService" class="com.example.UserServiceImpl"></bean>
+    <bean name="noInterfaceObject" class="com.example.NoInterfaceObject"></bean>
+    <bean name="userServiceAdvice" class="com.example.UserServiceAdvice"></bean>
+
+    <aop:config>
+        <!--        定义切入点-->
+<!--        只增强UserServiceImpl.findUser方法-->
+<!--        <aop:pointcut id="usp" expression="execution(* com.example.UserServiceImpl.findUser(..))"/>-->
+<!--        增强UserServiceImpl类的所有方法-->
+<!--        <aop:pointcut id="usp" expression="execution(* com.example.UserServiceImpl.*(..))"/>-->
+<!--        增强com.example中所有的方法-->
+        <aop:pointcut id="usp" expression="execution(* com.example.*.*(..))"/>
+        <!--        定义切面 ref 配置通知-->
+        <aop:aspect ref="userServiceAdvice">
+<!--            指定切点表达式-->
+            <aop:before method="before" pointcut-ref="usp"/>
+        </aop:aspect>
+    </aop:config>
+
+</beans>

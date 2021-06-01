@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    使用set方法完成外部bean注入-->
+    <bean name="dept" class="com.example.Dept">
+        <property name="name" value="奥迪集团"></property>
+        <property name="em" ref="emp"></property>
+    </bean>
+
+    <bean name="emp" class="com.example.Emp">
+        <property name="name" value="Jack"></property>
+    </bean>
+</beans>

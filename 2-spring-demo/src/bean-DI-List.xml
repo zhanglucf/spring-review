@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--    使用set方法完成注入-->
+    <bean name="dept" class="com.example.Dept">
+        <property name="name" value="滕王阁序"></property>
+        <property name="empList">
+            <array>
+                <ref bean="emp1"></ref>
+                <ref bean="emp2"></ref>
+                <ref bean="emp3"></ref>
+            </array>
+        </property>
+    </bean>
+
+    <bean name="emp1" class="com.example.Emp">
+        <property name="name" value="张三"></property>
+    </bean>
+
+    <bean name="emp2" class="com.example.Emp">
+        <property name="name" value="李四"></property>
+    </bean>
+
+    <bean name="emp3" class="com.example.Emp">
+        <property name="name" value="王五"></property>
+    </bean>
+</beans>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--   内部bean实现方式 -->
+    <bean name="dept" class="com.example.Dept">
+        <property name="empMap">
+            <map>
+                <entry key="emp1">
+                    <bean name="emp1" class="com.example.Emp">
+                        <property name="name" value="张三"></property>
+                    </bean>
+                </entry>
+                <entry key="emp2">
+                    <bean name="emp1" class="com.example.Emp">
+                        <property name="name" value="张三"></property>
+                    </bean>
+                </entry>
+                <entry key="emp3">
+                    <bean name="emp3" class="com.example.Emp">
+                        <property name="name" value="王五"></property>
+                    </bean>
+                </entry>
+            </map>
+        </property>
+    </bean>
+
+</beans>
