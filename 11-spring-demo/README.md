@@ -20,7 +20,7 @@
 
 #### `ProceedingJoinPoint`与`JoinPoint`的区别：
 
-![image-20210530144603175](E:\spring\11-spring-demo\image-20210530144603175.png)
+![image-20210530144603175](..\images\image-20210602084654207.png)
 
 - `ProceedingJoinPoint`是`JoinPoint`的子类
 
